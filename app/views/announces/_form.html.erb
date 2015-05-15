@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@announce) do |f| %>
+      <div class="form-group">
+      <%= f.text_area :title, class: "form-control", placeholder:"Title" %>
+      </div>
+      <div class="form-group">
+      <%= f.text_area :type_property, class: "form-control", placeholder:"Type de bien" %>
+      </div>
+      <div class="form-group">
+      <%= f.input :bed %>
+      </div>
+      <div class="form-group">
+      <%= f.input :bath %>
+      </div>
+      <div class="form-group">
+      <%= f.input :surface %>
+      </div>
+      <div class="form-group">
+      <%= f.input :features %>
+      </div>
+      <div class="form-group">
+      <%= f.input :construction %>
+      </div>
+      <div class="form-group">
+      <%= f.input :ges %>
+      </div>
+      <div class="form-group">
+      <%= f.input :class_energy %>
+      </div>
+      <div class="form-group">
+      <%= f.input :description %>
+      </div>
+      <div class="form-group">
+      <%= f.input :tax_month %>
+      </div>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
