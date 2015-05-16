@@ -5,7 +5,7 @@ class AnnouncesController < ApplicationController
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|
       marker.lat announce.latitude
       marker.lng announce.longitude
-      marker.infowindow render_to_string(locals: { announce: announce })
+      marker.infowindow render_to_string(partial: "/announces/map_box", locals: { announce: announce })
     end
   end
 
