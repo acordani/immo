@@ -20,6 +20,8 @@ class AnnouncesController < ApplicationController
 
   def create
     @announce = current_user.announces.build(announce_params)
+    @announce.address = params[:address]
+    @announce.locality = params[:locality]
     if @announce.save
       redirect_to announce_path(@announce)
     else
@@ -41,7 +43,7 @@ class AnnouncesController < ApplicationController
   private
 
   def announce_params
-    params.require(:announce).permit(:title, :type_property, :bed, :bath, :surface, :features, :construction, :ges, :class_energy, :description, :tax_month, :latitude, :longitude, :address)
+    params.require(:announce).permit(:title, :type_property, :bed, :bath, :surface, :features, :construction, :ges, :class_energy, :description, :tax_month, :latitude, :longitude, :address, :locality)
   end
 
   def set_announce
