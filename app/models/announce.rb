@@ -4,4 +4,7 @@ class Announce < ActiveRecord::Base
   validates :title, presence: true
   validates :type_property, presence: true
   validates :description, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
