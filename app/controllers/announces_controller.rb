@@ -2,7 +2,20 @@ class AnnouncesController < ApplicationController
   before_action :set_announce, only: [:show, :edit, :update, :destroy]
   def index
     # @announces = Announce.all
-    @announces = Announce.near(params[:locality].capitalize, 20)
+    # if params[:locality]
+    #   @announces = Announce.near(params[:locality].capitalize, 20)
+    # else
+      # @announces = Announce.all
+    # end
+
+      # @announces = Announce.near(params[:locality].capitalize, 20)
+    if params[:locality] != nil && params[:locality] != ""
+      @announces = Announce.where( "locality LIKE ?", "%#{params[:locality]}%")
+    else
+      @announces = Announce.all
+    end
+
+
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|
       marker.lat announce.latitude
       marker.lng announce.longitude

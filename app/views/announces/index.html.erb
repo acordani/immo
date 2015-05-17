@@ -3,11 +3,22 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <% @announces.each do |announce| %>
-        <%= announce.locality %>
+    <div class="col-md-5">
+      <% if @announces.exists? %>
+        <% @announces.each do |announce| %>
+          <%= announce.locality %>
+        <% end %>
+      <% else %>
+        <p>Nous n'avons trouvé aucune annonce correspondant à vos critères, mais une modification de ville pourrait donner de nouveaux résultats.</p>
+        <%= form_tag announces_path, method: :get, class: 'form-inline' do %>
+          <div class="form-group">
+            <input type="text" class="form-control" id="cityfield" name="locality" placeholder="Où recherchez-vous ?">
+            <button type="submit" class="btn btn-success">On y va !</button>
+          </div>
+        <% end %>
       <% end %>
     </div>
+    <div class="col-md-1"></div>
     <div class="col-md-6">
       <div id="map" style="width: 100%; height: 600px;"></div>
     </div>
