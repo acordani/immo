@@ -1,0 +1,38 @@
+.bg {
+  position:relative;
+  background-image: image-url('bg.jpg');
+  background-size: cover;
+  min-height:600px;
+  top:0;
+
+//   background: -webkit-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* Chrome 10+, Saf5.1+ */
+//   background:    -moz-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* FF3.6+ */
+//   background:     -ms-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* IE10 */
+//   background:      -o-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* Opera 11.10+ */
+//   background:         linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* W3C */
+
+}
+
+.bg-search {
+  position:absolute;
+  min-height:75px;
+  background-color: rgba(51,51,51,0.5);
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:200;
+}
+
+.high_voltage_pages_show_html {
+  h1{
+    font-size:50px;
+    color: white;
+    text-shadow: 0px 2px 0px rgba(51, 51, 51, 0.10);
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size:25px;
+      }
+    }
+}

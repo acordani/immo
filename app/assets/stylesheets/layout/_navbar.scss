@@ -9,7 +9,7 @@ $navbar-text-transform: capitalize;
 $navbar-font-weight: 300;
 $navbar-letter-spacing: 1.5px;
 $navbar-font-family: $navbar-font;
-$navbar-bg: white;
+$navbar-bg: transparent;
 
 /* -------------------------------------
  * Box model
@@ -23,7 +23,7 @@ $navbar-border-bottom-color: $gray-lighter;
 /* -------------------------------------
  * Navbar button
  * ------------------------------------- */
-$navbar-btn-height: 40px;
+$navbar-btn-height: 28px;
 $navbar-btn-bg: lightgrey;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
@@ -40,7 +40,7 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 .navbar-wagon {
-  background: $navbar-bg;
+  background: transparent;
   font-family: $navbar-font-family;
   border: none;
   font-size: $navbar-font-size;
@@ -49,9 +49,14 @@ $navbar-profile-border-width: 2px;
   letter-spacing: $navbar-letter-spacing;
   padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
-  border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
+  // border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  background: #white;
+  border-bottom: 0px solid #3A5E3D;
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,
@@ -87,7 +92,7 @@ $navbar-profile-border-width: 2px;
     margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     margin-bottom: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
     font-weight: bold;
-    background-color: $navbar-btn-bg;
+    background-color: $btn-home;
     font-size: 12px;
     &:hover{
       background-color: darken($navbar-btn-bg, 30%);
@@ -133,6 +138,11 @@ $navbar-profile-border-width: 2px;
     border-left: 1px solid #e6e6e6;
     z-index: -1;
   }
+}
+
+.logo {
+  font-size: 22px !important;
+  color:white;
 }
 
 /* -------------------------------------
