@@ -2,7 +2,7 @@ class AnnouncesController < ApplicationController
   before_action :set_announce, only: [:show, :edit, :update, :destroy]
   def index
     # @announces = Announce.all
-    @announces_location = Announce.near(params[:locality].capitalize, 20)
+    @announces = Announce.near(params[:locality].capitalize, 20)
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|
       marker.lat announce.latitude
       marker.lng announce.longitude

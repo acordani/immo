@@ -11,7 +11,9 @@
           <input id="user_input_autocomplete_address" name="address" class="form-control" placeholder="Start typing your address...">
         </div>
       </fieldset>
-     <!--  <%= f.input :locality, :as => :hidden%> -->
+      <fieldset>
+        <input id="locality" name="locality" type="hidden">
+      </fieldset>
       <div class="form-group">
       <%= f.text_area :type_property, class: "form-control", placeholder:"Type de bien" %>
       </div>
