@@ -1,19 +1,27 @@
 <h1>Announces#index</h1>
-<p>Find me in app/views/announces/index.html.erb</p>
-<% @announces.each do |announce| %>
-<%= announce.title %>
-<% end %>
 
-<div id="map" style="width: 100%; height: 600px;"></div>
-  <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-  <% end %>
-<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <% @announces.each do |announce| %>
+        <%= announce.locality %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div id="map" style="width: 100%; height: 600px;"></div>
+    </div>
+  </div>
+</div>
+        <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
+      <% end %>
