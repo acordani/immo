@@ -1,8 +1,9 @@
 class Announce < ActiveRecord::Base
   belongs_to :user
+  belongs_to :property
 
   validates :title, presence: true
-  validates :type_property, presence: true
+  validates :property_id, presence: true
   validates :description, presence: true
 
   geocoded_by :address

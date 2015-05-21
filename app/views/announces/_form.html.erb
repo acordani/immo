@@ -15,7 +15,7 @@
         <input id="locality" name="locality" type="hidden">
       </fieldset>
       <div class="form-group">
-      <%= f.text_area :type_property, class: "form-control", placeholder:"Type de bien" %>
+      <%= f.collection_select :property_id, Property.all, :id, :name, {promt: "Choisissez un type de bien"} %>
       </div>
       <div class="form-group">
       <%= f.input :bed %>
