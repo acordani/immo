@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+puts "Deleting old records..."
+Property.destroy_all
+
+puts "Creating property..."
+Property.create(name: "Appartement")
+Property.create(name: "Maison")
+Property.create(name: "Local Commercial")
+
+puts "Done !"
