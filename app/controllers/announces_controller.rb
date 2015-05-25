@@ -10,7 +10,7 @@ class AnnouncesController < ApplicationController
 
       # @announces = Announce.near(params[:locality].capitalize, 20)
     if params[:locality] != nil && params[:locality] != ""
-      @announces = Announce.where( "locality LIKE ?", "%#{params[:locality]}%")
+      @announces = Announce.where( "locality ILIKE ?", "%#{params[:locality]}%")
     else
       @announces = Announce.all
     end
