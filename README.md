@@ -33,3 +33,4 @@
 - formulaire de mise en vente (avec jQuery qui permet de modifier le formulaire en fonction des données)
 - Possibilité de mettre des biens en favoris lors des recherches.
 - Mise en place d’un namespace pour l’espace perso.
+- Possibilit" d'uploader plusieurs images pour chaque bien. On se limite à 3 pour le moment (tuto: https://www.youtube.com/watch?v=ADzJIDSw7z0)
