@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521060245) do
+ActiveRecord::Schema.define(version: 20150525142008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,29 @@ ActiveRecord::Schema.define(version: 20150521060245) do
 
   add_index "announces", ["user_id"], name: "index_announces_on_user_id", using: :btree
 
+  create_table "pictures", force: :cascade do |t|
+    t.integer  "announce_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "pictures", ["announce_id"], name: "index_pictures_on_announce_id", using: :btree
+
   create_table "properties", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "bed"
+    t.integer  "min_price"
+    t.integer  "max_price"
+    t.string   "locality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,4 +99,5 @@ ActiveRecord::Schema.define(version: 20150521060245) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "announces", "users"
+  add_foreign_key "pictures", "announces"
 end

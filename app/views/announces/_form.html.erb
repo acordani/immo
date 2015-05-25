@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <%= simple_form_for(@announce) do |f| %>
+      <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
       <div class="form-group">
       <%= f.text_area :title, class: "form-control", placeholder:"Title" %>
       </div>
@@ -44,6 +44,14 @@
       <div class="form-group">
        <%= f.input :tax_month, class: "form-control", placeholder:"Charges Mensuelles", label: false %>
       </div>
+      <div>
+      <%= f.simple_fields_for :pictures do |picture| %>
+               <% if picture.object.new_record? %>
+               <%= picture.input :picture, label: "Image File" %>
+
+             <% end %>
+             <% end %>
+
       </div>
       <%= f.submit %>
       <% end %>
