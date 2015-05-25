@@ -3,6 +3,10 @@
 <p>titre<%= @announce.title %></p>
 <p>type de bien<%= @announce.property.name %></p>
 <p>nombre de chambre<%= @announce.bed %></p>
+<% for picture in @announce.pictures %>
+  <li><%= link_to image_tag(picture.picture.url(:thumb)), picture.picture.url(:medium) %></li>
+<% end %>
+
 
 <div class="row">
       <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@announce.latitude%>,<%=@announce.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe>
