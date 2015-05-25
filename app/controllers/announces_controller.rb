@@ -31,6 +31,7 @@ class AnnouncesController < ApplicationController
 
   def new
     @announce = current_user.announces.build
+    3.times {@announce.pictures.build}
   end
 
   def create
@@ -58,7 +59,7 @@ class AnnouncesController < ApplicationController
   private
 
   def announce_params
-    params.require(:announce).permit(:title, :property_id, :bed, :bath, :surface, :features, :construction, :ges, :class_energy, :description, :tax_month, :latitude, :longitude, :address, :locality)
+    params.require(:announce).permit(:title, :property_id, :bed, :bath, :surface, :features, :construction, :ges, :class_energy, :description, :tax_month, :latitude, :longitude, :address, :locality, pictures_attributes: [:picture])
   end
 
   def set_announce
