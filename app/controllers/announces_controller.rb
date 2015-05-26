@@ -1,5 +1,5 @@
 class AnnouncesController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_announce, only: [:show, :edit, :update, :destroy]
   def index
     # @announces = Announce.all
@@ -39,8 +39,10 @@ class AnnouncesController < ApplicationController
     @announce.address = params[:address]
     @announce.locality = params[:locality]
     if @announce.save
+      flash[:notice] = "Votre bien a été ajouté"
       redirect_to announce_path(@announce)
     else
+      flash[:alert] = "Quelquechose ne va pas."
       render :new
     end
   end
