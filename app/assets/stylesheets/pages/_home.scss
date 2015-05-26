@@ -1,8 +1,12 @@
 .bg {
   position:relative;
+
   background-image: image-url('bg.jpg');
   background-size: cover;
   min-height:600px;
+
+  box-shadow: 0 2px 3px $blue;
+
   top:0;
 
 //   background: -webkit-linear-gradient(90deg, #8e9eab 10%, #eef2f3 90%); /* Chrome 10+, Saf5.1+ */
@@ -27,7 +31,7 @@
   h1{
     font-size:50px;
     color: white;
-    text-shadow: 0px 2px 0px rgba(51, 51, 51, 0.10);
+    text-shadow: 2px 2px 1px rgba(51, 51, 51, 0.30);
   }
 
     @media screen and (max-width: 768px) {
