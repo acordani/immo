@@ -1,14 +1,16 @@
 <div class="padded">
-<h4>Recherche : <%= params[:locality] %>: <%= @announces.count %> Résultat(s)</h4>
+<h4 class="text-center">Recherche : <%= params[:locality] %>: <%= @announces.count %> Résultat(s)</h4>
 
 
 <div class="container">
   <div class="row">
     <div class="col-md-5 col-xs-12">
+    <div class="col-md-8 col-md-offset-2">
       <% if @announces.exists? %>
         <% @announces.each do |t| %>
           <%= render "shared/cart", announce: t %>
         <% end %>
+      </div>
       <% else %>
         <p class="text-center">Nous n'avons trouvé aucune annonce correspondant à vos critères, mais une modification de ville pourrait donner de nouveaux résultats.</p>
         <%= form_tag announces_path, method: :get, class: 'form-inline' do %>
