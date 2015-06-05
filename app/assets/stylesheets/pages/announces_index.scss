@@ -1,7 +1,25 @@
 .announces_index_html {
+
+  .logo {
+    color:#3B5675;
+  }
+
+  body {
+    background-color: #fafafa;
+  }
+
   a white {
     color: white;
   }
+  .list-group {
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: #fbfbfb;
+    -webkit-box-shadow: 0 0 3px #bfbfbf;
+    -moz-box-shadow: 0 0 3px #bfbfbf;
+    box-shadow: 0 0 3px #bfbfbf;
+  }
+
 }
 
 @media screen and (max-width: 768px) {

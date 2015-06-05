@@ -4,14 +4,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
-    <div class="list-group">
-
+    <div class="col-md-5 col-xs-12">
+    <div class="col-md-8 col-md-offset-2">
       <% if @announces.exists? %>
         <% @announces.each do |t| %>
           <%= render "shared/cart", announce: t %>
         <% end %>
-
+      </div>
       <% else %>
         <p class="text-center">Nous n'avons trouvé aucune annonce correspondant à vos critères, mais une modification de ville pourrait donner de nouveaux résultats.</p>
         <%= form_tag announces_path, method: :get, class: 'form-inline' do %>
@@ -33,9 +32,22 @@
         <% end %>
       <% end %>
     </div>
-
-  </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <div id="map" class="hidden-xs" style="width: 100%; height: 600px;"></div>
+    </div>
   </div>
 </div>
-
+        <% content_for(:after_js) do %>
+        <%= javascript_tag do %>
+          $(document).on('ready', function() {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ internal: { id: 'map' } }, function(){
+              markers = handler.addMarkers(<%= raw @markers.to_json %>);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });
+          })
+        <% end %>
+      <% end %>
 </div>

@@ -1,5 +1,22 @@
 <h1>Announces#show</h1>
 <p>Find me in app/views/announces/show.html.erb</p>
+
+
+
+
+<%= image_tag(@announce.pictures.first.picture.url(:cover), alt: "Flat Picture", class: "full") %>
+
+
+
+
+
+
+
+
+
+
+
+
 <p>titre<%= @announce.title %></p>
 <p>type de bien<%= @announce.property.name %></p>
 <p>nombre de chambre<%= @announce.bed %></p>
