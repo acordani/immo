@@ -1,37 +1,8 @@
-#slider {
-  position: relative;
-  z-index: 1;
+#owl-demo .item{
+  margin: 3px;
 }
-
-#slider .flexslider {
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -moz-border-radius: 0px;
-  -webkit-border-radius: 0px;
-  border-radius: 0px;
-  height: 750px;
-  overflow: hidden;
-  border: none;
-  margin: 0;
-  position: relative;
-}
-
-
-#slider .flexslider .slides {
-  height: 100%;
-  list-style: none;
-  padding: 0;
-}
-
-#slider .flexslider .flex-direction-nav {
-  list-style: none;
-  height: 100%;
+#owl-demo .item img{
+  display: block;
   width: 100%;
-  top: 0;
-}
-
-.navigation.fixed {
-  position: fixed;
-  width: 100%;
+  height: auto;
 }
