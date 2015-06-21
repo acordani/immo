@@ -85,6 +85,56 @@
     </div>
   </div>
 
+  <div class="announce-tab">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="dashboard_products" role="tablist">
+              <li role="presentation" class="active"><a href="#description" aria-controls="home" role="tab" data-toggle="tab"><h5> Description</h5></a></li>
+              <% if @announce.class_energy.present? %>
+                <li role="presentation"><a href="#dpe" aria-controls="profile" role="tab" data-toggle="tab"><h5> Diagnostic Energie</h5></a></li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Tab panes -->
+          <div class="tab-content mt-20">
+            <div role="tabpanel" class="tab-pane active" id="description">
+              <%=  @announce.description %>
+            </div>
+            <% if @announce.class_energy.present? %>
+              <div role="tabpanel" class="tab-pane" id="dpe">
+                <div class="col-md-6 col-md-offset-3">
+                  <% if @announce.class_energy == "A" %>
+                    <%= image_tag "A.png" %>
+                  <% elsif @announce.class_energy == "B" %>
+                    <%= image_tag "B.png" %>
+                  <% elsif @announce.class_energy == "C" %>
+                    <%= image_tag "C.png" %>
+                  <% elsif @announce.class_energy == "D" %>
+                    <%= image_tag "D.png" %>
+                  <% elsif @announce.class_energy == "E" %>
+                    <%= image_tag "E.png" %>
+                  <% elsif @announce.class_energy == "F" %>
+                    <%= image_tag "F.png" %>
+                  <% elsif @announce.class_energy == "G" %>
+                    <%= image_tag "G.png" %>
+                  <% else @announce.class_energy == "" %>
+                   <h5> Il n'y a pas de DPE pour le moment</h5>
+                  <% end %>
+                  <div class="mt-20">
+                    <%= @announce.class_energy %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+         </div>
+        </div>
+      </div>
+
   <div class="similar_announces">
     <div class="container">
 
