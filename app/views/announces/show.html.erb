@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-md-6">
           <p class="price"><%= @announce.price %> €</p>
-          <p class="locality"><%= @announce.surface%>m2</p>
+          <p class="locality"><%= @announce.surface%>m&#178;</p>
         </div>
         <div class="col-md-6">
           <p class="type_announce">a vendre</p>
@@ -96,6 +96,7 @@
               <% if @announce.class_energy.present? %>
                 <li role="presentation"><a href="#dpe" aria-controls="profile" role="tab" data-toggle="tab"><h5> Diagnostic Energie</h5></a></li>
               <% end %>
+              <li role="presentation"><a href="#fiche" aria-controls="home" role="tab" data-toggle="tab"><h5> Fiche technique</h5></a></li>
             </ul>
           </div>
           <!-- Tab panes -->
@@ -129,7 +130,57 @@
                 </div>
               </div>
             <% end %>
+            <div role="tabpanel" class="tab-pane" id="fiche">
+              <div class="table-responsive space-bottom-30 space-top-30">
+                <table class="table table-striped">
+                  <tbody>
+                    <h5> Informations Générales </h5>
 
+                    <tr>
+                      <td> <p> Type de Bien </p></td>
+                      <td> <%= @announce.property.name %></td>
+                    </tr>
+                    <tr>
+                      <td> <p> Ville </p></td>
+                      <td> <%= @announce.locality %></td>
+                    </tr>
+                    <tr>
+                      <td> <p> Surface </p></td>
+                      <td> <%= @announce.surface %>m&#178;</td>
+                    </tr>
+                    <tr>
+                      <td> <p> Prix </p></td>
+                      <td> <%= @announce.price %> €</td>
+                    </tr>
+                    <% if @announce.transports.present? %>
+                      <tr>
+                        <td> <p> transports à proximité </p></td>
+                        <td> <%= @announce.transports %> €</td>
+                      </tr>
+                    <% end %>
+                    <% if @announce.view.present? %>
+                      <tr>
+                        <td> <p> Vue </p></td>
+                        <td> <%= @announce.view %> €</td>
+                      </tr>
+                    <% end %>
+                    <% if @announce.exposition.present? %>
+                      <tr>
+                        <td> <p> Exposition </p></td>
+                        <td> <%= @announce.exposition %> €</td>
+                      </tr>
+                    <% end %>
+                    <% if @announce.floor.present? %>
+                      <tr>
+                        <td> <p> Etage </p></td>
+                        <td> <%= @announce.floor %> €</td>
+                      </tr>
+                    <% end %>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
          </div>
         </div>
