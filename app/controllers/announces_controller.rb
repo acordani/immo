@@ -27,6 +27,12 @@ class AnnouncesController < ApplicationController
   def show
     @announce = Announce.find(params[:id])
     @announce_coordinates = { lat: @announce.latitude, lng: @announce.longitude }
+
+
+    @similar_announces = Announce.where("locality ILIKE ?", "%#{@announce.locality}%").where("bed >= ?", "#{@announce.bed}")
+
+    # @similar_announces = Announce.where("bed >= ?", "#{@announce.bed}")
+
   end
 
   def new
@@ -57,6 +63,9 @@ class AnnouncesController < ApplicationController
   def destroy
     @announce.destroy
   end
+
+
+
 
   private
 
