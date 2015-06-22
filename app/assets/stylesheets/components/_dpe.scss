@@ -1,0 +1,305 @@
+// .fleche_a {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 0.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:white;
+//   white-space:nowrap;
+// }
+// .fleche_a:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #00933d 50%, #01a143 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+// .fleche_a_active {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 0.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:black;
+//   white-space:nowrap;
+// }
+
+// .fleche_a_active:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #00933d 50%, #01a143 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+// .fleche_b {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 1.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:white;
+//   white-space:nowrap;
+// }
+// .fleche_b:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+// .fleche_b_active {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 1.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:black;
+//   white-space:nowrap;
+// }
+// .fleche_b_active:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+// .fleche_c {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 2.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:white;
+//   white-space:nowrap;
+// }
+// .fleche_c:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+// .fleche_c_active {
+//   display:inline-block;
+//   line-height:40px;
+//   height:41px;
+//   font-size:20px;
+//   font-weight:bold;
+
+//   padding:0 2em 0 2.5em;
+//   position:relative;
+//   overflow:hidden;
+//   color:white;
+//   white-space:nowrap;
+// }
+// .fleche_c_active:after {
+//   position:absolute;
+//   content:'';
+//   height:15em;
+//   width:15em;
+//   vertical-align:middle;
+//   display:inline-block;
+//   margin-top:-1.2em;
+//   background:#1A72CF;
+//   background:linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+//   transform:rotate(45deg);
+//   transform-origin: center right;
+//   right:120px;
+//   z-index:-1;
+// }
+
+.fleche {
+  display:inline-block;
+  line-height:40px;
+  height:41px;
+  font-size:20px;
+  font-weight:bold;
+
+
+  position:relative;
+  overflow:hidden;
+
+  white-space:nowrap;
+}
+
+.fleche:after {
+  position:absolute;
+  content:'';
+  height:15em;
+  width:15em;
+  vertical-align:middle;
+  display:inline-block;
+  margin-top:-1.2em;
+  background:#1A72CF;
+
+  transform:rotate(45deg);
+  transform-origin: center right;
+  right:120px;
+  z-index:-1;
+}
+
+.fleche_a {
+  padding:0 2em 0 0.5em;
+  color:white;
+}
+.fleche_a_active {
+  padding:0 2em 0 0.5em;
+  color:black;
+}
+
+.fleche_a:after, .fleche_a_active:after {
+  background:linear-gradient(to top left , #00933d 50%, #01a143 50%);
+}
+
+.fleche_b {
+  padding:0 2em 0 1.5em;
+  color:white;
+}
+.fleche_b_active {
+  padding:0 2em 0 1.5em;
+  color:black;
+}
+
+.fleche_b:after, .fleche_b_active:after {
+  background:linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+}
+
+.fleche_c {
+  padding:0 2em 0 2.5em;
+  color:white;
+}
+.fleche_c_active {
+  padding:0 2em 0 2.5em;
+  color:black;
+}
+
+.fleche_c:after, .fleche_c_active:after {
+  background:linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+}
+
+.fleche_d {
+  padding:0 2em 0 3.5em;
+  color:white;
+}
+.fleche_d_active {
+  padding:0 2em 0 3.5em;
+  color:black;
+}
+
+.fleche_d:after, .fleche_d_active:after {
+  background:linear-gradient(to top left , #d7e100 50%, #f0fb04 50%);
+}
+
+.fleche_e {
+  padding:0 2em 0 4.5em;
+  color:white;
+}
+.fleche_e_active {
+  padding:0 2em 0 4.5em;
+  color:black;
+}
+
+.fleche_e:after, .fleche_e_active:after {
+  background:linear-gradient(to top left , #ffb12a 50%, #fbba4b 50%);
+}
+
+.fleche_f {
+  padding:0 2em 0 5.5em;
+  color:white;
+}
+.fleche_f_active {
+  padding:0 2em 0 5.5em;
+  color:black;
+}
+
+.fleche_f:after, .fleche_f_active:after {
+  background:linear-gradient(to top left , #ff9400 50%, #e38503 50%);
+}
+
+.fleche_g {
+  padding:0 2em 0 6.5em;
+  color:white;
+}
+.fleche_g_active {
+  padding:0 2em 0 6.5em;
+  color:black;
+}
+
+.fleche_g:after, .fleche_g_active:after {
+  background:linear-gradient(to top left , #e12229 50%, #f70a12 50%);
+}
+
+.ok {
+  font-size: 20px;
+  position: relative;
+  top: -16px;
+}
+
+
+
+

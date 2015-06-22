@@ -1,3 +1,10 @@
+.announces_show_html {
+
+  .logo {
+    color:#3B5675;
+  }
+}
+
 .titre {
 
   font-size:34px;
@@ -43,7 +50,7 @@
   width: 315px;
   position: absolute;
   height: 180px;
-  top: 590px;
+  top: 370px;
   left: 815px;
 
   .btn {
@@ -67,4 +74,10 @@
   font-weight: 400;
   line-height: 26px;
 
+}
+
+.similar_announce {
+  font-size:30px;
+  text-align:center;
+  line-height: 30px;
 }

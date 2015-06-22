@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525190441) do
+ActiveRecord::Schema.define(version: 20150621165244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20150525190441) do
     t.string   "features"
     t.integer  "construction"
     t.string   "ges"
-    t.string   "class_energy"
     t.text     "description"
     t.integer  "tax_month"
     t.integer  "user_id"
@@ -37,6 +36,13 @@ ActiveRecord::Schema.define(version: 20150525190441) do
     t.string   "locality"
     t.string   "token"
     t.integer  "property_id"
+    t.string   "class_energy"
+    t.string   "transports"
+    t.string   "view"
+    t.string   "exposition"
+    t.string   "floor"
+    t.string   "floor_max"
+    t.boolean  "elevator"
   end
 
   add_index "announces", ["user_id"], name: "index_announces_on_user_id", using: :btree
