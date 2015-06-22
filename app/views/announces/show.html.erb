@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-12">
         <% if @announce.pictures.count == 1 %>
-          <div class="col-md-4 col-md-offset-4">
+          <div class="col-md-4 col-md-offset-4 col-lg-4 col-md-offset-4">
             <%= image_tag @announce.pictures.first.picture.url(:medium) %>
           </div>
         <% end %>
@@ -18,50 +18,63 @@
     </div>
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-lg-6 col-sm-6">
         <p class="titre"><%= @announce.title.capitalize %></p>
         <p class="locality"><%= @announce.locality %></p>
       </div>
     </div>
+    <div class="row">
 
-    <div class="detail-announce-box">
-      <div class="row">
-        <div class="col-md-6">
-          <p class="price"><%= @announce.price %> €</p>
-          <p class="locality"><%= @announce.surface%>m&#178;</p>
-        </div>
-        <div class="col-md-6">
-          <p class="type_announce">a vendre</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-
-          <button type="button" class="btn btn-black btn-lg" data-toggle="modal" data-target="#myModal">
-    En savoir plus
-  </button>
-        </div>
-      </div>
     </div>
-
   </div>
-
   <div class="clear"></div>
 
   <div class="announce-content">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-lg-3 hidden-xs col-sm-5 mb-20">
 
           <iframe width="200" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.fr/maps/ms?ie=UTF8&amp;msa=0&amp;msid=101686375028251599401.0004484f73bea6145ef6b&amp;ll=<%=@announce.latitude%>,<%=@announce.longitude%>&amp;spn=0,0&amp;output=embed&amp;s=AARTsJqhzeyiqiLGEqDCDC7ar_q7Q1nmAw"></iframe>
 
         </div>
-        <div class="col-md-4">
-          <p class="locality"><%=@announce.property.name%> - <%=@announce.bed%> chambre(s) - <%= @announce.bath%> salle(s) de bains</p>
+        <div class="col-md-4 col-lg-4">
+          <p class="locality hidden-sm"><%=@announce.property.name%> - <%=@announce.bed%> chambre(s) - <%= @announce.bath%> salle(s) de bains</p>
 
 
-          <p class="detail-description"><%=@announce.description %></p>
+          <p class="detail-description hidden-sm"><%=@announce.description %></p>
         </div>
+        <div class="col-md-2 col-md-offset-1 col-lg-2 col-md-offset-1 col-sm-offset-1 col-sm-4 col-md-offset-1 col-xs-offset-1 col-xs-4">
+          <div class="detail-announce-box">
+            <div class="row">
+
+              <div class="col-md-6 col-lg-6 col-sm-6 col-xs-5">
+                <p class="price"><%= @announce.price %> €</p>
+                <p class="locality"><%= @announce.surface%>m&#178;</p>
+              </div>
+              <div class="col-xs-2"></div>
+              <div class="col-md-6 col-lg-6 col-xs-5">
+               <p class="type_announce">a vendre</p>
+              </div>
+
+            </div>
+            <div class="row">
+            <div class="col-xs-3"></div>
+              <div class="col-md-8 col-md-offset-2 col-lg-6 col-sm-8 col-sm-offset-2 ">
+                <button type="button" class="btn btn-black btn-lg" data-toggle="modal" data-target="#myModal">
+                  En savoir plus
+                </button>
+              </div>
+              <div class="col-xs-3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="hidden-xs hidden-md hidden-lg col-sm-12">
+            <p class="deatil-description"><%=@announce.description %></p>
+          </div>
+        </div>
+
+      </div>
       </div>
     </div>
   </div>
@@ -95,7 +108,7 @@
   <div class="announce-tab">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-lg-12">
           <div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" id="dashboard_products" role="tablist">

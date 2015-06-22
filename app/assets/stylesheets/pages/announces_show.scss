@@ -48,8 +48,8 @@
   background-color: #fff;
   z-index: 99;
   width: 315px;
-  position: absolute;
-  height: 180px;
+  // position: absolute;
+  // height: 180px;
   top: 370px;
   left: 815px;
 
@@ -80,4 +80,17 @@
   font-size:30px;
   text-align:center;
   line-height: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+      .detail-description {
+        margin-bottom:20px;
+      }
+
+      .detail-announce-box {
+        text-align:cebter;
+      }
+
 }
