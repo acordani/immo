@@ -16,6 +16,8 @@ class AnnouncesController < ApplicationController
       @announces = Announce.all
     end
 
+    @announces_select = Announce.all.select { |f| f.picture.exists? }.take(3)
+
 
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|
       marker.lat announce.latitude
@@ -29,7 +31,7 @@ class AnnouncesController < ApplicationController
     @announce_coordinates = { lat: @announce.latitude, lng: @announce.longitude }
 
 
-    @similar_announces = Announce.where("locality ILIKE ?", "%#{@announce.locality}%").where("bed >= ?", "#{@announce.bed}").where.not(id: @post)
+    @similar_announces = Announce.where("locality ILIKE ?", "%#{@announce.locality}%").where("bed >= ?", "#{@announce.bed}").where.not(id: @announce)
 
     # @similar_announces = Announce.where("bed >= ?", "#{@announce.bed}")
 
