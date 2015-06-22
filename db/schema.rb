@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150621165244) do
 
   create_table "announces", force: :cascade do |t|
     t.string   "title"
+    t.string   "type_property"
     t.integer  "bed"
     t.integer  "bath"
     t.integer  "surface"
@@ -28,13 +29,12 @@ ActiveRecord::Schema.define(version: 20150621165244) do
     t.integer  "tax_month"
     t.integer  "user_id"
     t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
     t.string   "locality"
-    t.string   "token"
     t.integer  "property_id"
     t.string   "class_energy"
     t.string   "transports"
@@ -63,27 +63,6 @@ ActiveRecord::Schema.define(version: 20150621165244) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "searches", force: :cascade do |t|
-    t.string   "bed"
-    t.integer  "min_price"
-    t.integer  "max_price"
-    t.string   "locality"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "uploads", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.string   "image"
-    t.integer  "announce_id"
-    t.string   "announce_token"
   end
 
   create_table "users", force: :cascade do |t|
