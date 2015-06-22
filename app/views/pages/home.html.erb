@@ -35,23 +35,24 @@
   </div>
 </div>
 <div class="container">
-<div class="row">
-<div class="announces mt-50">
-  <div class="">
-  <% Announce.all.select { |f| f.pictures.exists? }.take(3).each do |a| %>
-    <div class="col-md-4">
-      <%= link_to announce_path(a) do %>
-        <%= image_tag a.pictures.first.picture.url(:medium), class: "cart" %>
+  <div class="row">
+    <div class="announces mt-50">
+      <% if Announce.count >=3 %>
+        <% Announce.all.select { |f| f.pictures.exists? }.take(3).each do |a| %>
+          <div class="col-md-4">
+            <%= link_to announce_path(a) do %>
+              <%= image_tag a.pictures.first.picture.url(:medium), class: "cart" %>
+            <% end %>
+            <div class="cart_content">
+              <p><%= a.locality %></p>
+              <p><%= a.property.name %></p>
+              <p><%= a.price %> €</p>
+            </div>
+          </div>
+        <% end %>
       <% end %>
-      <div class="cart_content">
-        <p><%= a.locality %></p>
-        <p><%= a.property.name %></p>
-        <p><%= a.price %> €</p>
-      </div>
     </div>
-  <% end %>
-</div>
-</div>
+  </div>
 </div>
 
 

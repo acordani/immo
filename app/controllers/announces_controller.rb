@@ -16,7 +16,7 @@ class AnnouncesController < ApplicationController
       @announces = Announce.all
     end
 
-    @announces_select = Announce.all.select { |f| f.picture.exists? }.take(3)
+
 
 
     @markers = Gmaps4rails.build_markers(@announces) do |announce, marker|

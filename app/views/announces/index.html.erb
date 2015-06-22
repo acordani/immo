@@ -1,5 +1,5 @@
 <div class="padded">
-<h4 class="text-center">Recherche : <%= params[:locality] %>: <%= @announces.count %> Résultat(s)</h4>
+<h4 class="text-center">Nous avons trouvé <%= @announces.select { |f| f.pictures.exists? }.count %> propriété(s) à vendre correspondant à votre recherche</h4>
 
 
 <div class="container">
@@ -8,9 +8,11 @@
     <div class="list-group">
 
       <% if @announces.exists? %>
-        <% @announces.each do |t| %>
-          <%= render "shared/cart", announce: t %>
-        <% end %>
+
+          <% @announces.select { |f| f.pictures.exists? }.each do |t| %>
+            <%= render "shared/cart", announce: t %>
+          <% end %>
+
 
       <% else %>
         <p class="text-center">Nous n'avons trouvé aucune annonce correspondant à vos critères, mais une modification de ville pourrait donner de nouveaux résultats.</p>
