@@ -2,11 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="owl-carousel center-block">
-          <% @announce.pictures.each do |pic| %>
-            <div> <%= image_tag pic.picture.url(:medium) %> </div>
-          <% end %>
-        </div>
+        <% if @announce.pictures.count == 1 %>
+          <div class="col-md-4 col-md-offset-4">
+            <%= image_tag @announce.pictures.first.picture.url(:medium) %>
+          </div>
+        <% end %>
+        <% if @announce.pictures.count >= 3 %>
+          <div class="owl-carousel center-block">
+            <% @announce.pictures.each do |pic| %>
+              <div> <%= image_tag pic.picture.url(:medium) %> </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
 
@@ -104,38 +111,53 @@
             <div role="tabpanel" class="tab-pane active" id="description">
               <%=  @announce.description %>
             </div>
-            <% if @announce.class_energy.present? %>
-              <div role="tabpanel" class="tab-pane" id="dpe">
-                <div class="col-md-6 col-md-offset-3">
-                  <% if @announce.class_energy == "A" %>
-                    <%= image_tag "A.png" %>
-                  <% elsif @announce.class_energy == "B" %>
-                    <%= image_tag "B.png" %>
-                  <% elsif @announce.class_energy == "C" %>
-                    <%= image_tag "C.png" %>
-                  <% elsif @announce.class_energy == "D" %>
-                    <%= image_tag "D.png" %>
-                  <% elsif @announce.class_energy == "E" %>
-                    <%= image_tag "E.png" %>
-                  <% elsif @announce.class_energy == "F" %>
-                    <%= image_tag "F.png" %>
-                  <% elsif @announce.class_energy == "G" %>
-                    <%= image_tag "G.png" %>
-                  <% else @announce.class_energy == "" %>
-                   <h5> Il n'y a pas de DPE pour le moment</h5>
-                  <% end %>
-                  <div class="mt-20">
-                    <%= @announce.class_energy %>
-                  </div>
-                </div>
+            <div role="tabpanel" class="tab-pane" id="dpe">
+              <div class="col-md-6 col-md-offset-3">
+                <% if @announce.class_energy == "A" %>
+                  <div class="fleche fleche_a_active"> A </div> <span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_a"> A </div><br>
+                <% end %>
+                <% if @announce.class_energy == "B" %>
+                  <div class="fleche fleche_b_active"> B </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_b"> B </div></br>
+                <% end %>
+                <% if @announce.class_energy == "C" %>
+                  <div class="fleche fleche_c_active"> C </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_c"> C </div><br>
+                <% end %>
+                <% if @announce.class_energy == "D" %>
+                  <div class="fleche fleche_d_active"> D </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_d"> D </div><br>
+                <% end %>
+                <% if @announce.class_energy == "E" %>
+                  <div class="fleche fleche_e_active"> E </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_e"> E </div><br>
+                <% end %>
+                <% if @announce.class_energy == "F" %>
+                  <div class="fleche fleche_f_active"> F </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_f"> F </div><br>
+                <% end %>
+                <% if @announce.class_energy == "G" %>
+                  <div class="fleche fleche_g_active"> G </div><span class="ok">OK</span><br>
+                <% else %>
+                  <div class="fleche fleche_g"> G </div><br>
+                <% end %>
+                <% if @announce.class_energy == "" %>
+                 <h5> Il n'y a pas de DPE pour le moment</h5>
+                <% end %>
               </div>
-            <% end %>
+            </div>
             <div role="tabpanel" class="tab-pane" id="fiche">
               <div class="table-responsive space-bottom-30 space-top-30">
                 <table class="table table-striped">
                   <tbody>
                     <h5> Informations Générales </h5>
-
                     <tr>
                       <td> <p> Type de Bien </p></td>
                       <td> <%= @announce.property.name %></td>
@@ -199,7 +221,7 @@
               <%= render "shared/cart2", announce: t %>
               </div>
             <% end %>
-          <!-- </div> -->
+
 
         </div>
       <% end %>
