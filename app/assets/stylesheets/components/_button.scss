@@ -6,6 +6,19 @@
     background-color:#3B5675;
     border-color:#000;
     color: white;
+
+  }
+
+  .btn-new {
+    background-color:#FB0062;
+    // border-color:white;
+    color:white;
+
+    &:hover {
+      background-color: #F4478B;
+      color:white;
+
+    }
   }
 
   .btn_search {
