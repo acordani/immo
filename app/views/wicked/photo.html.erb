@@ -1,0 +1,36 @@
+<div class="mt-50">
+photo
+
+<%= form_for @announce, url: wicked_path, html: { method: :put, class: 'form', multipart: true } do |f| %>
+    <% if @announce.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@mannounce.errors.count, "error") %> prohibited this my_model from being saved:</h2>
+
+          <ul>
+            <% @announce.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :id %>
+
+
+
+      <%= f.simple_fields_for :pictures do |picture| %>
+               <% if picture.object.new_record? %>
+               <%= picture.input :picture, label: "Image File" %>
+
+             <% end %>
+             <% end %>
+
+
+
+    <div class="actions">
+      <%= link_to 'Back', previous_wizard_path({:announce_id => @announce.id}), :class => 'btn btn-default' %>
+      <%= link_to 'Cancel', announces_path, data: { confirm: 'Are you sure you want to cancel the wizard?' } %>
+      <%= f.submit %>
+    </div>
+<% end %>
+</div>

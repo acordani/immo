@@ -1,0 +1,60 @@
+<div class="container mt-50">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@announce, url: wicked_path, html: { method: :put, class: 'form' }) do |f| %>
+      <%= f.hidden_field :id %>
+      <!-- <div class="form-group">
+      <%= f.text_area :title, class: "form-control", placeholder:"Title" %>
+      </div> -->
+      <!-- <fieldset>
+        <div class="form-group">
+          <label class="control-label">Address</label><br>
+          <input id="user_input_autocomplete_address" name="address" class="form-control" placeholder="Start typing your address...">
+        </div>
+      </fieldset> -->
+      <!-- <fieldset>
+        <input id="locality" name="locality" type="hidden">
+      </fieldset>
+      <div class="form-group">
+      <%= f.collection_select :property_id, Property.all, :id, :name, {promt: "Choisissez un type de bien"} %>
+      </div> -->
+      <!-- <div class="form-group">
+      <%= f.input :price %> -->
+      <div class="form-group">
+      <%= f.input :bed %>
+      </div>
+      <div class="form-group">
+      <%= f.input :bath %>
+      </div>
+      <div class="form-group">
+      <%= f.input :surface %>
+      </div>
+      <!-- <div class="form-group">
+      <%= f.input :features %>
+      </div>
+      <div class="form-group">
+      <%= f.input :construction %>
+      </div>
+      <div class="form-group">
+      <%= f.input :ges %>
+      </div> -->
+      <div class="form-group">
+      <%= f.input :class_energy %>
+      </div>
+      <div class="form-group">
+      <%= f.input :description %>
+      </div>
+      <!-- <div class="form-group">
+       <%= f.input :tax_month, class: "form-control", placeholder:"Charges Mensuelles", label: false %>
+      </div> -->
+      <div class="actions">
+      <%= link_to 'Back', previous_wizard_path({:announce_id => @announce.id}), :class => 'btn btn-default' %>
+      <%= link_to 'Cancel', announces_path, data: { confirm: 'Are you sure you want to cancel the wizard?' } %>
+      <%= f.submit %>
+    </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
