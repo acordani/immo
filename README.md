@@ -8,27 +8,27 @@
 
 ### Utilisateurs non connectés
 
-- Je peux rechercher un bien
-- Je peux me connecter
-- Je peux m’inscrire
+- Je peux rechercher un bien --- ok
+- Je peux me connecter --- ok
+- Je peux m’inscrire --- ok (reste à mettre le lien facebook)
 
 
 
 ### Utilisateurs  connectés
 
-- Je peux mettre un bien vente
-- Je peux uploader des photos pour mon bien
+- Je peux mettre un bien vente ---- ok
+- Je peux uploader des photos pour mon bien --- ok
 - Je peux mettre des biens en favoris en cas de recherche
 - Je peux discuter avec des particuliers
 
 
 ### Les Features
 
-- Géolocalisation des biens sur une carte  (ok)
-- Autocomplete pour les adresses :
-- lors de la saisie des biens par l’internaute   (ok)
-- lors de la saisie de la ville dans la page home
-- Inscription par facebook et twitter.
+- Géolocalisation des biens sur une carte --- ok
+- Autocomplete pour les adresses : 
+- lors de la saisie des biens par l’internaute --- ok
+- lors de la saisie de la ville dans la page home --- ok
+- Inscription par facebook --- ok
 - Dans la home page, recherche d’un bien par prix, par type de bien(appartement,…) et par prix(maximum).
 - formulaire de mise en vente (avec jQuery qui permet de modifier le formulaire en fonction des données)
 - Possibilité de mettre des biens en favoris lors des recherches.
