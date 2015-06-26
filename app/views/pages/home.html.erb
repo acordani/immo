@@ -39,7 +39,7 @@
     <div class="announces mt-50">
       <% if Announce.count >=3 %>
         <% Announce.all.select { |f| f.pictures.exists? }.take(3).each do |a| %>
-          <div class="col-md-4">
+          <div class="col-md-4 col-xs-12">
             <%= link_to announce_path(a) do %>
               <%= image_tag a.pictures.first.picture.url(:medium), class: "cart" %>
             <% end %>
@@ -54,5 +54,20 @@
     </div>
   </div>
 </div>
+<div class="bandeau_gradient">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="mb-40 mise_en_forme">
+        <h2 class="mb-20"> Vendeurs, il est temps de passez la seconde.</h2>
+        <h4 class="mb-30"> Mettez votre annonce gratuitement sur notre site </h4>
+        <%= link_to "Créer votre annonce", new_announce_path, class:"btn btn-new mt-20" %>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 
 
