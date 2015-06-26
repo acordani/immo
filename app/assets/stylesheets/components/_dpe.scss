@@ -198,7 +198,11 @@
   background:#1A72CF;
 
   transform:rotate(45deg);
+  -webkit-transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
   transform-origin: center right;
+  -webkit-transform-origin: center right;
+  -ms-transform-origin: center right;
   right:120px;
   z-index:-1;
 }
@@ -213,7 +217,10 @@
 }
 
 .fleche_a:after, .fleche_a_active:after {
-  background:linear-gradient(to top left , #00933d 50%, #01a143 50%);
+  background: linear-gradient(to top left , #00933d 50%, #01a143 50%);
+  background: -webkit-linear-gradient(to top left , #00933d 50%, #01a143 50%);
+  background: -o-linear-gradient(to top left , #00933d 50%, #01a143 50%);
+  background: -moz-linear-gradient(to top left , #00933d 50%, #01a143 50%);
 }
 
 .fleche_b {
@@ -227,6 +234,9 @@
 
 .fleche_b:after, .fleche_b_active:after {
   background:linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+  background: -webkit-linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+  background: -o-linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
+  background: -moz-linear-gradient(to top left , #00b63e 50%, #02cd47 50%);
 }
 
 .fleche_c {
@@ -240,6 +250,9 @@
 
 .fleche_c:after, .fleche_c_active:after {
   background:linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+  background: -webkit-linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+  background: -o-linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
+  background: -moz-linear-gradient(to top left , #6bc72a 50%, #79e02f 50%);
 }
 
 .fleche_d {
@@ -253,6 +266,9 @@
 
 .fleche_d:after, .fleche_d_active:after {
   background:linear-gradient(to top left , #d7e100 50%, #f0fb04 50%);
+  background: -webkit-linear-gradient(to top left , #d7e100 50%, #f0fb04 50%);
+  background: -o-linear-gradient(to top left , #d7e100 50%, #f0fb04 50%);
+  background: -moz-linear-gradient(to top left , #d7e100 50%, #f0fb04 50%);
 }
 
 .fleche_e {
@@ -266,6 +282,9 @@
 
 .fleche_e:after, .fleche_e_active:after {
   background:linear-gradient(to top left , #ffb12a 50%, #fbba4b 50%);
+  background: -webkit-linear-gradient(to top left , #ffb12a 50%, #fbba4b 50%);
+  background: -o-linear-gradient(to top left , #ffb12a 50%, #fbba4b 50%);
+  background: -moz-linear-gradient(to top left , #ffb12a 50%, #fbba4b 50%);
 }
 
 .fleche_f {
@@ -279,6 +298,9 @@
 
 .fleche_f:after, .fleche_f_active:after {
   background:linear-gradient(to top left , #ff9400 50%, #e38503 50%);
+  background: -webkit-linear-gradient(to top left , #ff9400 50%, #e38503 50%);
+  background: -o-linear-gradient(to top left , #ff9400 50%, #e38503 50%);
+  background: -moz-linear-gradient(to top left , #ff9400 50%, #e38503 50%);
 }
 
 .fleche_g {
@@ -292,6 +314,10 @@
 
 .fleche_g:after, .fleche_g_active:after {
   background:linear-gradient(to top left , #e12229 50%, #f70a12 50%);
+  background: -webkit-linear-gradient(to top left , #e12229 50%, #f70a12 50%);
+  background: -o-linear-gradient(to top left , #e12229 50%, #f70a12 50%);
+  background: -moz-linear-gradient(to top left , #e12229 50%, #f70a12 50%);
+
 }
 
 .ok {
