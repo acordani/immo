@@ -4,6 +4,7 @@
 //= require underscore
 //= require owl.carousel
 //= require gmaps/google
+//= require bootstrap-filestyle
 //= require_tree .
 //= require_tree ./app
 

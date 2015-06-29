@@ -5,7 +5,7 @@ ruby "2.2.0"
 
 gem "rails", "4.2.0"
 gem "pg"
-gem "figaro"
+gem "figaro", github: 'sealocal/figaro'
 gem "simple_form"
 gem "country_select"
 gem "high_voltage"
@@ -15,6 +15,7 @@ gem "paperclip"
 gem "aws-sdk", "< 2.0"
 
 gem "jquery-rails"
+
 gem "sass-rails", "~> 5.0"
 gem "uglifier"
 gem "bootstrap-sass"
@@ -31,6 +32,8 @@ gem "rails-assets-underscore"
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'owlcarousel-rails'
+
+
 
 
 group :development, :test do

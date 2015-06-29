@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+<!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li>Social Profiles</li>
+    <li>Personal Details</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+    <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
+
+      <%= f.text_area :title, class: "form-control", placeholder:"Title" %>
+
+
+
+          <input id="user_input_autocomplete_address" name="address" class="form-control" placeholder="Start typing your address...">
+
+    <input id="locality" name="locality" type="hidden">
+<!--
+      <%= f.collection_select :property_id, Property.all, :id, :name, {promt: "Choisissez un type de bien"} %> -->
+
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <%= f.input :price %>
+    <%= f.input :bed %>
+    <%= f.input :surface %>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
+<% end %>
+</div>
+</div>
+
+<!-- jQuery -->
+<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>

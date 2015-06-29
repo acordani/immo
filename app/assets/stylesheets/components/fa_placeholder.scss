@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+input.email-placeholder::-webkit-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f003  ';
+  color: #e6e6e6;
+}
+
+
+
+  .email-placeholder::-webkit-input-placeholder { /* WebKit browsers */
+         color:    #e6e6e6;
+  }
+
+input.email-placeholder::-moz-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f003  ';
+  color: #e6e6e6; }
+
+.email-placeholder::-moz-input-placeholder {
+         color:    #e6e6e6;
+  }
+
+input.email-placeholder::-ms-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f003  ';
+  color: #e6e6e6; }
+
+.email-placeholder::-ms-input-placeholder {
+         color:    #e6e6e6;
+  }
+
+
+input.password-placeholder::-webkit-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f023  ';
+  color: #e6e6e6; }
+
+.password-placeholder::-webkit-input-placeholder {
+         color:    #e6e6e6;
+  }
+
+input.password-placeholder::-moz-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f023  ';
+  color: #e6e6e6; }
+.password-placeholder::-moz-input-placeholder {
+         color:    #e6e6e6;
+  }
+
+input.password-placeholder::-ms-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f023  ';
+  color: #e6e6e6; }
+
+.password-placeholder::-ms-input-placeholder {
+         color:    #7e7975;
+         background-color:white;
+  }

@@ -126,7 +126,7 @@
     /* Font styles */
     font-family: 'Lato', Calibri, Arial, sans-serif;
     font-size: 16px;
-    line-height: 30px; /* Same as height */
+    line-height: 28px; /* Same as height */
     text-align: center;
     font-weight: bold;
 }
@@ -197,4 +197,20 @@
 .form input[type=checkbox] {
     vertical-align: middle;
     margin: -1px 5px 0 1px;
+}
+
+.form-control {
+background-color:white;
+color: #8c8c8c;}
+
+#search-form{
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  position:relative;
+
+  .selectize-input{
+    min-width: 250px !important;
+    vertical-align: -10px;
+  }
 }

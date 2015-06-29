@@ -15,10 +15,13 @@
         <input id="locality" name="locality" type="hidden">
       </fieldset>
       <div class="form-group">
-      <%= f.collection_select :property_id, Property.all, :id, :name, {promt: "Choisissez un type de bien"} %>
+      <%= f.collection_select( :property_id, Property.all, :id, :name, {promt: "Choisissez un type de bien"} ) %>
       </div>
+
+
       <div class="form-group">
       <%= f.input :price %>
+      </div>
       <div class="form-group">
       <%= f.input :bed %>
       </div>
@@ -58,6 +61,85 @@
       <%= f.submit %>
       <% end %>
     </div>
-  </div>
-</div>
+    </div>
+    </div>
+<div class="container">
 
+
+    <div class="row">
+      <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
+
+        <div class="col-md-6">
+
+          <label>
+            Titre principal de l'annonce
+            <div class="form-group">
+              <%= f.text_area :title, class: "form-control title-placeholder", placeholder:"Appartement sur Paris" %>
+            </div>
+          </label>
+        </div>
+        <div class="col-md-6">
+          <label>
+            La description du bien à vendre
+            <div class="form-group">
+              <%= f.text_area :description, label: false, class: "form-control description-placeholder", placeholder:"Appartement de 3 pièces composé d'un sejour double, une cuisine aménagée et équipée, 3 chambres, 1 salle de bains."%>
+            </div>
+          </label>
+        </div>
+
+        <div class="col-md-3">
+          <label>
+            Nombre de Chambre
+            <div class="form-group">
+              <%= f.input :bed, label: false, class: "form-control title-placeholder", placeholder:""%>
+            </div>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label>
+            Nombre de Salle de Bains
+            <div class="form-group">
+              <%= f.input :bath, label: false, class: "form-control title-placeholder", placeholder:""%>
+            </div>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label>
+          Surface Habitable
+            <div class="form-group">
+              <%= f.input :surface, label: false %>
+            </div>
+          </label>
+        </div>
+        <div class="col-md-3">
+          <label>
+            Classification Energetique
+            <div class="form-group">
+              <%= f.input :class_energy, as: :select, collection: ["A","B","C","D","E","F","G"],label: false, class: "form-control" %>
+
+            </div>
+          </label>
+        </div>
+        <div class="col-md-12">
+          <%= f.simple_fields_for :pictures do |picture| %>
+            <% if picture.object.new_record? %>
+              <div class="col-md-3">
+                <%= picture.input :picture, label: "Image File" %>
+                <%= picture.file_field :picture, class: 'filestyle',
+                  :'data-classButton' => 'btn btn-primary',
+                  :'data-input' => 'false', classIcon:  'icon-plus',
+                  :'data-buttonText' => 'Ajouter une photo'  %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+
+  <div class="col-submit">
+    <button type="submit">Submit</button>
+  </div>
+
+<% end %>
+  </div>
+
+</div>
