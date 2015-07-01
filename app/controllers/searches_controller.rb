@@ -42,7 +42,7 @@ class SearchesController < ApplicationController
 private
 
   def search_params
-    params.require(:search).permit(:sprperty, :slocality, :ssurface)
+    params.require(:search).permit(:property_id, :slocality, :ssurface)
   end
 
   def set_search

@@ -1,5 +1,5 @@
 
-  <% if announce.pictures.any? %>
+  <% if announce.picture1.present? %>
     <%= image_tag(announce.pictures.first.picture.url(:medium), alt: "Flat Picture", class: "cart") %>
   <% else %>
     <%= image_tag('no_photo.png', class: "no_photo") %>
