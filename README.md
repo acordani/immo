@@ -16,11 +16,17 @@
 
 ### Utilisateurs  connectés
 
+Je veux vendre un bien
+
 - Je peux mettre un bien vente ---- ok
 - Je peux uploader des photos pour mon bien --- ok
 - Je peux mettre des biens en favoris en cas de recherche
 - Je peux discuter avec des particuliers
 
+Je recherche un bien
+
+- Je peux enregistrer ma demande  --- ok
+- Je peux voir les biens qui correspondent a ma recherche ---ok
 
 ### Les Features
 
