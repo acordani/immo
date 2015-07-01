@@ -1,0 +1,15 @@
+<h1>Announces#new</h1>
+<p>Find me in app/views/announces/new.html.erb</p>
+
+<%= form_for(@search) do |f| %>
+  <%= f.label :sprperty %>
+  <%= f.text_field :sprperty %>
+
+  <%= f.label :slocality %>
+  <%= f.text_field :slocality %>
+
+  <%= f.label :ssurface %>
+  <%= f.text_field :ssurface %>
+
+  <%= f.submit %>
+<% end %>

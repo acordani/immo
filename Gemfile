@@ -32,6 +32,7 @@ gem "rails-assets-underscore"
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'owlcarousel-rails'
+gem 'activeadmin', github: 'activeadmin'
 
 
 

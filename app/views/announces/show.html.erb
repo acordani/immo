@@ -2,15 +2,21 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <% if @announce.pictures.count == 1 %>
+        <% pictures = [] %>
+
+        <% if @announce.picture1.exists? &&   @announce.picture2.exists? && @announce.picture3.exists? &&  @announce.picture4.exists? %>
+          <% pictures << @announce.picture1 << @announce.picture2 << @announce.picture3 << @announce.picture4 %>
+        <% else @announce.picture1.exists? %>
           <div class="col-md-4 col-md-offset-4 col-lg-4 col-md-offset-4">
-            <%= image_tag @announce.pictures.first.picture.url(:medium) %>
+            <%= image_tag @announce.picture1.url(:medium) %>
           </div>
+
+
         <% end %>
-        <% if @announce.pictures.count >= 3 %>
+        <% if pictures.count >= 3 %>
           <div class="owl-carousel center-block">
-            <% @announce.pictures.each do |pic| %>
-              <div> <%= image_tag pic.picture.url(:medium) %> </div>
+            <% pictures.each do |pic| %>
+              <div> <%= image_tag pic.url(:medium) %> </div>
             <% end %>
           </div>
         <% end %>

@@ -57,3 +57,10 @@ input.password-placeholder::-ms-input-placeholder::before {
          color:    #7e7975;
          background-color:white;
   }
+
+
+  input.price-placeholder::-webkit-input-placeholder::before {
+  font-family: fontAwesome;
+  content: '\f153  ';
+  color: #e6e6e6;
+}

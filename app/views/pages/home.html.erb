@@ -38,10 +38,10 @@
   <div class="row">
     <div class="announces mt-50">
       <% if Announce.count >=3 %>
-        <% Announce.all.select { |f| f.pictures.exists? }.take(3).each do |a| %>
+        <% Announce.all.select { |f| f.picture1.exists? }.take(3).each do |a| %>
           <div class="col-md-4 col-xs-12">
             <%= link_to announce_path(a) do %>
-              <%= image_tag a.pictures.first.picture.url(:medium), class: "cart" %>
+              <%= image_tag a.picture1.url(:medium), class: "cart" %>
             <% end %>
             <div class="cart_content">
               <p><%= a.locality %></p>

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
@@ -49,20 +49,12 @@
       <div class="form-group">
        <%= f.input :tax_month, class: "form-control", placeholder:"Charges Mensuelles", label: false %>
       </div>
-      <div>
-      <%= f.simple_fields_for :pictures do |picture| %>
-               <% if picture.object.new_record? %>
-               <%= picture.input :picture, label: "Image File" %>
 
-             <% end %>
-             <% end %>
-
-      </div>
       <%= f.submit %>
       <% end %>
     </div>
     </div>
-    </div>
+    </div> -->
 <div class="container">
 
 
@@ -70,7 +62,6 @@
       <%= simple_form_for(@announce, html: { multipart: true }) do |f| %>
 
         <div class="col-md-6">
-
           <label>
             Titre principal de l'annonce
             <div class="form-group">
@@ -86,6 +77,44 @@
             </div>
           </label>
         </div>
+
+        <div class="col-md-6">
+          <label>
+            Quel est son prix
+            <div class="form-group">
+              <div class="input-group">
+                <%= f.input :price, label: false, class: "form-control price-placeholder", placeholder:"300000"%>
+                <div class="input-group-addon">€</div>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <div class="col-md-6">
+          <label>
+            Que vendez-vous ?
+            <div class="form-group">
+
+              <%= f.input :property_id, as: :select, collection: Property.all,label: false, class: "form-control" %>
+            </div>
+          </label>
+        </div>
+
+
+        <div class="col-md-12">
+          <label>
+            L'adresse du bien à vendre
+        <fieldset>
+        <div class="form-group">
+
+          <input id="user_input_autocomplete_address" name="address" class="form-control" placeholder="25 Rue du petit Musc, 75004 Paris">
+        </div>
+      </fieldset>
+      <fieldset>
+        <input id="locality" name="locality" type="hidden">
+      </fieldset>
+      </label>
+      </div>
 
         <div class="col-md-3">
           <label>
@@ -107,7 +136,10 @@
           <label>
           Surface Habitable
             <div class="form-group">
-              <%= f.input :surface, label: false %>
+              <div class="input-group">
+                <%= f.input :surface, label: false %>
+                <div class="input-group-addon">m2</div>
+              </div>
             </div>
           </label>
         </div>
@@ -118,21 +150,50 @@
               <%= f.input :class_energy, as: :select, collection: ["A","B","C","D","E","F","G"],label: false, class: "form-control" %>
 
             </div>
+            <div class="mb-20"></div>
           </label>
         </div>
-        <div class="col-md-12">
-          <%= f.simple_fields_for :pictures do |picture| %>
-            <% if picture.object.new_record? %>
+        <div class="col-md-3">
+          <label>
+            Photo principale
+            <%= f.file_field :picture1, class: 'filestyle',
+              :'data-classButton' => 'btn btn-primary',
+              :'data-input' => 'false',
+              :'data-buttonText' => 'Ajouter une photo'  %>
+          </label>
+        </div>
+
               <div class="col-md-3">
-                <%= picture.input :picture, label: "Image File" %>
-                <%= picture.file_field :picture, class: 'filestyle',
+              <label>
+                autre photo
+                <%= f.file_field :picture2, class: 'filestyle',
+                  :'data-classButton' => 'btn btn-primary',
+                  :'data-input' => 'false',
+                  :'data-buttonText' => 'Ajouter une photo'  %>
+                </label>
+              </div>
+
+              <div class="col-md-3">
+              <label>
+                autre photo
+                <%= f.file_field :picture3, class: 'filestyle',
+                  :'data-classButton' => 'btn btn-primary',
+                  :'data-input' => 'false', classIcon:  'icon-plus',
+                  :'data-buttonText' => 'Ajouter une photo'  %>
+                  </label>
+              </div>
+
+              <div class="col-md-3">
+              <label>
+                4eme photo
+                <%= f.file_field :picture4, class: 'filestyle',
                   :'data-classButton' => 'btn btn-primary',
                   :'data-input' => 'false', classIcon:  'icon-plus',
                   :'data-buttonText' => 'Ajouter une photo'  %>
               </div>
-            <% end %>
-          <% end %>
-        </div>
+
+
+
 
 
   <div class="col-submit">
