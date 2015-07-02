@@ -10,9 +10,8 @@ private
 def find_announces
   announces = Announce.order(:locality)
   announces = announces.where("locality like ?", "%#{slocality}%") if slocality.present?
-  announces = announces.where(property_id: property_id) if property_id.present?
+  # products = products.where(category_id: category_id) if category_id.present?
   # products = products.where("price >= ?", min_price) if min_price.present?
-  # announces = announces.where("surface BETWEEN min_surf AND max_")
   # products = products.where("pri
   announces
 end
